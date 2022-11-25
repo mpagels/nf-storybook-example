@@ -8,10 +8,15 @@ export default {
   component: ToDo,
 }
 
-export const NotCompleted = () => (
-  <ToDo text="Write a Story" completed={false} />
-)
-export const Completed = () => <ToDo text="Write a Story" completed={true} />
-export const Brokoli = () => (
-  <ToDo text="Think of better story name" completed={true} hasCheckbox={true} />
-)
+const Template = (args) => <ToDo {...args} />
+export const ToDoExample = Template.bind({})
+export const ToDoCompleted = Template.bind({})
+
+ToDoExample.args = {
+  text: 'Write a Story',
+  completed: false,
+}
+ToDoCompleted.args = {
+  text: 'Write a Story',
+  completed: true,
+}
